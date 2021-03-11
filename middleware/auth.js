@@ -1,0 +1,11 @@
+/**
+ * 页面级中间件
+ * @param context 上下文
+ */
+export default function (context) {
+    // Add the userAgent property to the context
+    context.userAgent = process.server
+        ? context.req.headers['user-agent']
+        : navigator.userAgent
+    // console.log(context.userAgent);
+}
